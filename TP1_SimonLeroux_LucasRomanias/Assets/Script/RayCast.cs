@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -27,7 +27,7 @@ public class RayCast : MonoBehaviour
         {
             if(hit.transform.tag == "Bouton")
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+               
                 TextInteragir.SetActive(true);
                 canInteract= true;
 
@@ -36,7 +36,6 @@ public class RayCast : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             TextInteragir.SetActive(false);
             canInteract = false;
         }
