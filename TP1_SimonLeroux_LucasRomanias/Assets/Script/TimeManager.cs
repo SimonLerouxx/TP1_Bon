@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    float timeSinceStart =0;
+    static public float timeSinceStart =0;
     TextMeshProUGUI textMeshProUGUI;
     
     void Start()

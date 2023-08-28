@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionPlayerEnnemi : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class CollisionPlayerEnnemi : MonoBehaviour
         if(collision.gameObject.tag == "Ennemi")
         {
             Debug.Log("Mort");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
