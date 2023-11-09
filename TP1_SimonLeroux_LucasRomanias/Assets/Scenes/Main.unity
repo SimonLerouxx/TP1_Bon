@@ -55149,6 +55149,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146140504}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &919132148490196122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4422899843816808581, guid: 475a0a5d2992ed84cb0d3983f80689e5, type: 3}
+  m_PrefabInstance: {fileID: 3575895662810805279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3575895662810805279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55255,7 +55260,7 @@ PrefabInstance:
     - target: {fileID: 3575895662795521484, guid: 475a0a5d2992ed84cb0d3983f80689e5, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1328347463}
+      objectReference: {fileID: 919132148490196122}
     - target: {fileID: 3575895662795521484, guid: 475a0a5d2992ed84cb0d3983f80689e5, type: 3}
       propertyPath: plateforme
       value: 
@@ -55264,6 +55269,14 @@ PrefabInstance:
       propertyPath: TextInteragir
       value: 
       objectReference: {fileID: 1021328606}
+    - target: {fileID: 3575895662795521486, guid: 475a0a5d2992ed84cb0d3983f80689e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.651
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575895662795521486, guid: 475a0a5d2992ed84cb0d3983f80689e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.219
+      objectReference: {fileID: 0}
     - target: {fileID: 3624743482848095251, guid: 475a0a5d2992ed84cb0d3983f80689e5, type: 3}
       propertyPath: m_Name
       value: mixamorig:LeftHandThumb2
