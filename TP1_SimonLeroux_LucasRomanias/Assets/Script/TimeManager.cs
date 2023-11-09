@@ -7,19 +7,23 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+ 
 
     static public float timeSinceStart =0;
     TextMeshProUGUI textMeshProUGUI;
+    static public bool isSTarted = false;
     
     void Start()
     {
         textMeshProUGUI= GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       textMeshProUGUI.text ="Temps: "+ String.Format("{0:0.##}", (timeSinceStart += Time.deltaTime)); ;
+        if (isSTarted)
+        {
+            textMeshProUGUI.text = "Temps: " + String.Format("{0:0.##}", (timeSinceStart += Time.deltaTime)); 
+        }
+      
     }
 }

@@ -4,6 +4,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+//Source Raycast: Unity Documentation
+
 public class RayCast : MonoBehaviour
 {
     [SerializeField] GameObject Player;
@@ -12,17 +15,12 @@ public class RayCast : MonoBehaviour
     [SerializeField] GameObject plateforme;
     bool canInteract=false;
     bool isMovingUp = false;
-        // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance))
         {
             if(hit.transform.tag == "Bouton")
@@ -30,7 +28,6 @@ public class RayCast : MonoBehaviour
                
                 TextInteragir.SetActive(true);
                 canInteract= true;
-
             }
             
         }
@@ -45,22 +42,26 @@ public class RayCast : MonoBehaviour
     {
         if(ctx.performed && canInteract &&!isMovingUp)
         {
-           
-            StartCoroutine(MoveUp());
+            isMovingUp = true;
+            plateforme.GetComponent<Animator>().SetBool("GoUp", true);
+            TimeManager.isSTarted = true;
+            //old version
+            //StartCoroutine(MoveUp());
         }
     }
 
-    IEnumerator MoveUp()
-    {
-        isMovingUp= true;
+    //IEnumerator MoveUp()
+    //{
+    //    isMovingUp= true;
         
-        while (plateforme.transform.localPosition.y < 23.4f)
-        {
+    //    while (plateforme.transform.localPosition.y < 23.4f)
+    //    {
             
-            plateforme.transform.Translate(Vector3.up*Time.deltaTime*5);
+    //        plateforme.transform.Translate(Vector3.up*Time.deltaTime*5);
            
-            yield return null;
-        }
+    //        yield return null;
+    //    }
+    //    TimeManager.isSTarted = true;
         
-    }
+    //}
 }
