@@ -40,14 +40,22 @@ public class RayCast : MonoBehaviour
 
     public void Interagir(InputAction.CallbackContext ctx)
     {
-        if(ctx.performed && canInteract &&!isMovingUp)
+        if(ctx.performed && canInteract && !isMovingUp)
         {
             isMovingUp = true;
             plateforme.GetComponent<Animator>().SetBool("GoUp", true);
             TimeManager.isSTarted = true;
+            Player.GetComponent<Animator>().SetBool("isInteracting", true);
+            StartCoroutine(StopAnimation(Player.GetComponent<Animator>()));
             //old version
             //StartCoroutine(MoveUp());
         }
+    }
+
+    IEnumerator StopAnimation(Animator animator)
+    {
+        yield return new WaitForSeconds(1);
+        animator.SetBool("isInteracting", false);
     }
 
     //IEnumerator MoveUp()
